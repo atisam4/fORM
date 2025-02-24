@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Interaction Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Agent Interaction Form</h1>
+    <p>Kripya niche diye gaye fields ko bharein aur phir 'Submit' button par click karein.</p>
+    <form id="agentForm">
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" name="customerName" required>
+        
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter Phone Number" required>
+        
+        <label for="centerName">Center Name:</label>
+        <input type="text" id="centerName" name="centerName" placeholder="Enter Center Name" required>
+        
+        <label for="agentName">Agent Name:</label>
+        <input type="text" id="agentName" name="agentName" placeholder="Enter Agent Name" required>
+
+        <label for="dob">Date of Birth:</label>
+        <div>
+            Date:
+            <select id="date" name="date" required>
+                <option value="">Select Date</option>
+                <script>
+                    for (let i = 1; i <= 31; i++) {
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    }
+                </script>
+            </select>
+            Month:
+            <select id="month" name="month" required>
+                <option value="">Select Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            Year:
+            <select id="year" name="year" required>
+                <option value="">Select Year</option>
+                <script>
+                    const currentYear = new Date().getFullYear();
+                    for (let i = currentYear; i >= currentYear - 120; i--) {
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    }
+                </script>
+            </select>
+        </div>
+
+        <label for="options">Preset:</label>
+        <select id="options" name="options" required>
+            <option value="">Select Preset</option>
+            <option value="Approve">Approve</option>
+            <option value="Just Form">Just Form</option>
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
